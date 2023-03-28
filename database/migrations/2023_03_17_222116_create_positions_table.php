@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('department_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->string('name')->unique();
+            $table->string('createdBy');
+            $table->string('updatedBy');
             $table->timestamps();
         });
     }

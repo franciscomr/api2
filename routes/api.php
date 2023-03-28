@@ -2,7 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Catalog\OrganizationController;
+use App\Http\Controllers\Auth\AuthController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -16,4 +17,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::controller(AuthController::class)->group([function () {
+    Route::post('/login', 'login')->name('login.post');
+}]);
+
+Route::controller(OrganizationController::class)->group(function () {
+    Route::get('organizations', 'index')->name('catalog.organizations.index');
+    Route::post('organizations', 'store')->name('catalog.organizations.store');
+    Route::patch('organizations/{organization}', 'update')->name('catalog.organizations.update');
+    Route::get('organizations/{organization}', 'show')->name('catalog.organizations.show');
 });

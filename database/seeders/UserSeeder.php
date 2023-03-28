@@ -20,8 +20,8 @@ class UserSeeder extends Seeder
                 'username' => 'francisco.martinez',
                 'email' => 'francisco.martinez@sagaji.com.mx',
                 'password' => bcrypt(config('app.name')),
-                'created_by' => 'Administrador',
-                'updated_by' => 'Administrador',
+                'createdBy' => 'Administrador',
+                'updatedBy' => 'Administrador',
             ]
         );
 
@@ -33,8 +33,8 @@ class UserSeeder extends Seeder
                 'username' => 'marco.panales',
                 'email' => 'marco.panales@sagaji.com.mx',
                 'password' => bcrypt(config('app.name')),
-                'created_by' => 'Administrador',
-                'updated_by' => 'Administrador',
+                'createdBy' => 'Administrador',
+                'updatedBy' => 'Administrador',
             ]
         );
     }

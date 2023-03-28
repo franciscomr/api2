@@ -17,48 +17,48 @@ class EmployeeSeeder extends Seeder
             [
                 'branch_id' => 4,
                 'position_id' => 15,
-                'employee_id' => 'E03583',
+                'employeeId' => 'E03583',
                 'names' => 'Francisco',
-                'first_surname' => 'Martinez',
-                'second_surname' => 'Ramirez',
-                'created_by' => 'Administrador',
-                'updated_by' => 'Administrador',
+                'firstSurname' => 'Martinez',
+                'secondSurname' => 'Ramirez',
+                'createdBy' => 'Administrador',
+                'updatedBy' => 'Administrador',
             ]
         );
         Employee::create(
             [
                 'branch_id' => 2,
                 'position_id' => 15,
-                'employee_id' => 'E04460',
+                'employeeId' => 'E04460',
                 'names' => 'Marco Antonio',
-                'first_surname' => 'Panales',
-                'second_surname' => 'Nuñez',
-                'created_by' => 'Administrador',
-                'updated_by' => 'Administrador',
+                'firstSurname' => 'Panales',
+                'secondSurname' => 'Nuñez',
+                'createdBy' => 'Administrador',
+                'updatedBy' => 'Administrador',
             ]
         );
         Employee::create(
             [
                 'branch_id' => 3,
                 'position_id' => 15,
-                'employee_id' => 'E07601',
+                'employeeId' => 'E07601',
                 'names' => 'Francisco Javier',
-                'first_surname' => 'Quinto',
-                'second_surname' => 'Jimenez',
-                'created_by' => 'Administrador',
-                'updated_by' => 'Administrador',
+                'firstSurname' => 'Quinto',
+                'secondSurname' => 'Jimenez',
+                'createdBy' => 'Administrador',
+                'updatedBy' => 'Administrador',
             ]
         );
         Employee::create(
             [
                 'branch_id' => 5,
                 'position_id' => 15,
-                'employee_id' => 'E08692',
+                'employeeId' => 'E08692',
                 'names' => 'Juan Carlos',
-                'first_surname' => 'Avendaño',
-                'second_surname' => 'Anza',
-                'created_by' => 'Administrador',
-                'updated_by' => 'Administrador',
+                'firstSurname' => 'Avendaño',
+                'secondSurname' => 'Anza',
+                'createdBy' => 'Administrador',
+                'updatedBy' => 'Administrador',
             ]
         );
     }

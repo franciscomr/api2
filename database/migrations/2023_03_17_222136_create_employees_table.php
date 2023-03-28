@@ -15,14 +15,14 @@ return new class extends Migration
             $table->id();
             $table->foreignId('branch_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('position_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
-            $table->string('employee_identifier')->unique()->nullable();
-            $table->unique(array('names', 'first_surname', 'second_surname'));
+            $table->string('employeeId')->unique()->nullable();
+            $table->unique(array('names', 'firstSurname', 'secondSurname'));
             $table->string('names');
-            $table->string('first_surname');
-            $table->string('second_surname');
+            $table->string('firstSurname');
+            $table->string('secondSurname');
             $table->boolean('active')->default(1);
-            $table->string('created_by');
-            $table->string('updated_by');
+            $table->string('createdBy');
+            $table->string('updatedBy');
             $table->timestamps();
         });
     }
