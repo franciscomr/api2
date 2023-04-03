@@ -11,12 +11,21 @@ use App\Models\Catalog\Organization;
 
 class OrganizationController extends Controller
 {
+    private const TITLE = 'Organizaciones';
+    private const BASE_PATH = 'catalog.organizations';
     public function __construct()
     {
-        $this->middleware('auth:sanctum');
+        $this->middleware('auth:sanctum')->except('index');
     }
+
     public function index()
     {
+        return view('catalog.organizations.index', ['title' => self::TITLE, 'basepath' => self::BASE_PATH]);
+    }
+
+    public function search()
+    {
+
         $organizations = Organization::applySorts(request('sort'))->get();
         return OrganizationCollection::make($organizations);
     }

@@ -4,6 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Catalog\OrganizationController;
 use App\Http\Controllers\Auth\AuthController;
+
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -24,7 +26,7 @@ Route::controller(AuthController::class)->group([function () {
 }]);
 
 Route::controller(OrganizationController::class)->group(function () {
-    Route::get('organizations', 'index')->name('catalog.organizations.index');
+    Route::get('organizations', 'search')->name('catalog.organizations.search');
     Route::post('organizations', 'store')->name('catalog.organizations.store');
     Route::patch('organizations/{organization}', 'update')->name('catalog.organizations.update');
     Route::get('organizations/{organization}', 'show')->name('catalog.organizations.show');

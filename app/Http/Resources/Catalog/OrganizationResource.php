@@ -19,7 +19,7 @@ class OrganizationResource extends JsonResource
             'id' => (string) $this->resource->getRouteKey(),
             'attributes' => [
                 'name' => $this->resource->name,
-                'businessName' => $this->resource->bussinessName,
+                'businessName' => $this->resource->businessName,
                 'address' => $this->resource->address,
                 'city' => $this->resource->city,
                 'state' => $this->resource->state,

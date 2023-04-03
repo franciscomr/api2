@@ -8,6 +8,10 @@ use App\Http\Requests\Auth\LoginRequest;
 
 class AuthController extends Controller
 {
+    public function loginView()
+    {
+        return view('login');
+    }
     public function login(LoginRequest $request)
     {
         $request->authenticate();

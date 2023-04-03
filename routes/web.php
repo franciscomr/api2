@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Catalog\OrganizationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +18,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::controller(AuthController::class)->group(function () {
+    Route::get('/login', 'loginView')->name('login');
+});
+
+Route::get('home', [HomeController::class, 'home'])->name('home');
+
+Route::controller(OrganizationController::class)->group(function () {
+    Route::get('organizations', 'index')->name('catalog.organizations.index');;
 });

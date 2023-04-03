@@ -21,7 +21,8 @@ return new class extends Migration
             $table->string('postalCode');
             $table->string('createdBy');
             $table->string('updatedBy');
-            $table->timestamps();
+            $table->timestamp('createdAt')->useCurrent();
+            $table->timestamp('updatedAt')->useCurrent();
         });
     }
 
