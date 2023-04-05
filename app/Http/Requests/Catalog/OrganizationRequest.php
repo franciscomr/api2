@@ -47,6 +47,14 @@ class OrganizationRequest extends FormRequest
         return $rules;
     }
 
+    public function attributes()
+    {
+        return [
+            'data.attributes.address' => 'address', //This will replace any instance of 'username' in validation messages with 'email'
+            //'anyinput' => 'Nice Name',
+        ];
+    }
+
     protected function prepareForValidation()
     {
         if (auth('sanctum') && request()->routeIs('catalog.organizations.store')) {
@@ -69,6 +77,8 @@ class OrganizationRequest extends FormRequest
         }
     }
 }
+
+
 
 
 

@@ -46,7 +46,9 @@ export default {
       }
       fetch(searchRoute.value, sortBy.value);
     }
-
+    const redirect = (resource) => {
+      window.location.href = getRoute(props.basepath + '.' + resource);
+    }
     onMounted(() => {
       searchRoute.value = getRoute(props.basepath + '.search');
       fetch(searchRoute.value, sortBy.value);
@@ -55,7 +57,7 @@ export default {
       return route(url);
     }
 
-    return { fetch, dataRetrieval, sort, sortBy }
+    return { fetch, dataRetrieval, sort, sortBy, redirect }
   }
 }
 </script>
@@ -74,7 +76,7 @@ export default {
       </div>
 
       <div>
-        <BasicButton :label="'Nuevo'" :appeal="false" :use_icon="true">
+        <BasicButton :label="'Nuevo'" :appeal="false" :use_icon="true" @click="redirect('create')">
           <template #icon>
             <plus-icon :size=24 fillColor="#fff" />
           </template>

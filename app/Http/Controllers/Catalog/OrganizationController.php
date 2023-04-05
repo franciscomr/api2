@@ -15,7 +15,7 @@ class OrganizationController extends Controller
     private const BASE_PATH = 'catalog.organizations';
     public function __construct()
     {
-        $this->middleware('auth:sanctum')->except('index');
+        $this->middleware('auth:sanctum')->except(['index', 'create']);
     }
 
     public function index()
@@ -30,8 +30,15 @@ class OrganizationController extends Controller
         return OrganizationCollection::make($organizations);
     }
 
+    public function create()
+    {
+        return view('catalog.organizations.form', ['title' => self::TITLE, 'basepath' => self::BASE_PATH]);
+    }
+
     public function store(OrganizationRequest $request)
     {
+
+
         $organization = Organization::create($request->validated()['data']['attributes']);
 
         return response()->json([

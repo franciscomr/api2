@@ -27,5 +27,6 @@ Route::controller(AuthController::class)->group(function () {
 Route::get('home', [HomeController::class, 'home'])->name('home');
 
 Route::controller(OrganizationController::class)->group(function () {
-    Route::get('organizations', 'index')->name('catalog.organizations.index');;
+    Route::get('organizations', 'index')->name('catalog.organizations.index');
+    Route::get('organizations/create', 'create')->name('catalog.organizations.create');
 });
