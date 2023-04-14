@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Builder;
 
 trait SortAndFilter
 {
-  public function scopeApplySaf(Builder $query, $sort, $filter)
+  public function scopeApplySortAndFilter(Builder $query, $sort, $filter)
   {
     if (!property_exists($this, 'allowedFilters')) {
       abort(500, 'Please set the public property $allowedSorts inside' . get_class($this));
