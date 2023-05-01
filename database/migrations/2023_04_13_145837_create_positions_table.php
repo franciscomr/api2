@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('department_id')->constrained();
             $table->string('name');
+            $table->string('createdBy');
+            $table->string('updatedBy');
             $table->timestamp('createdAt')->useCurrent();
             $table->timestamp('updatedAt')->useCurrent();
         });

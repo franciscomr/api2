@@ -30,6 +30,10 @@ Route::controller(OrganizationController::class)->group(function () {
 });
 
 Route::controller(BranchController::class)->group(function () {
+    route::get('branches', 'index')->name('catalog.branches.index');
+    route::post('branches', 'store')->name('catalog.branches.store');
+    route::patch('branches/{branch}', 'update')->name('catalog.branches.update');
+    route::get('branches/{branch}', 'show')->name('catalog.branches.show');
 });
 
 Route::controller(DepartmentController::class)->group(function () {
